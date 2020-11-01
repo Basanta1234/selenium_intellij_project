@@ -28,7 +28,6 @@ public class DiamondTestBase {
     public static void initBrowser()  {
 
         String browserType=props.getStringValue("browser");
-
         switch (browserType.toLowerCase()) {
             case "chrome":
                 WebDriverManager.chromedriver().setup();

@@ -23,12 +23,9 @@ public class Props {
     }
 
     public static Props getInstance() {
-
         if (SINGLE_INSTANCE == null) {
             SINGLE_INSTANCE = new Props();
-
         }
-
         return SINGLE_INSTANCE;
     }
 
@@ -44,7 +41,6 @@ public class Props {
         } catch (NumberFormatException ex) {
           ex.getMessage();
         }
-
         return 0;
     }
 }
