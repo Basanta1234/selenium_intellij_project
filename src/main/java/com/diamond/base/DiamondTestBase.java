@@ -17,26 +17,17 @@ import java.util.concurrent.TimeUnit;
 public class DiamondTestBase {
 
     protected static WebDriver diamondDriver = null;
-    protected static Properties diamondProp;
+    public static final Props props =Props.getInstance();
 
-    public DiamondTestBase() {
+    public DiamondTestBase()  {
 
-
-        try (FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "diamondconfiguration" + File.separator + "config.properties")) {
-            diamondProp = new Properties();
-            diamondProp.load(fis);
-        } catch (FileNotFoundException ex) {
-            System.out.println(ex.getMessage());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
 
-    @BeforeClass
-    public void initBrowser() {
-        String browserType = diamondProp.getProperty("browser");
+   @BeforeClass
+    public static void initBrowser()  {
 
+        String browserType=props.getStringValue("browser");
 
         switch (browserType.toLowerCase()) {
             case "chrome":
@@ -54,12 +45,13 @@ public class DiamondTestBase {
         }
         diamondDriver.manage().window().maximize();
         diamondDriver.manage().deleteAllCookies();
-        diamondDriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        diamondDriver.manage().timeouts().implicitlyWait(props.getLongStringValue("implicit_wait"), TimeUnit.SECONDS);
     }
 
-    @AfterClass
+@AfterClass
     public void closeBrowser() {
         if (diamondDriver != null) {
+            diamondDriver.close();
             diamondDriver.quit();
         }
     }
