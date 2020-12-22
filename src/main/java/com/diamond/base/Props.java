@@ -1,12 +1,13 @@
 package com.diamond.base;
 
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-public class Props {
+public class Props extends DiamondTestBase{
     public static Props SINGLE_INSTANCE = null;
     public static Properties properties;
 
@@ -16,8 +17,9 @@ public class Props {
             properties.load(fis);
 
         } catch (FileNotFoundException ex) {
-            System.out.println(ex.getMessage());
+           LOG.error("Error on file path : "+ex.getMessage());
         } catch (IOException e) {
+            LOG.error("Input Output exception  : "+e.getMessage());
             e.printStackTrace();
         }
     }
@@ -36,10 +38,10 @@ public class Props {
     public long getLongStringValue(String key) {
         String value = "";
         try {
-            value =properties.getProperty(key);
+            value = properties.getProperty(key);
             return Long.parseLong(value);
         } catch (NumberFormatException ex) {
-          ex.getMessage();
+          LOG.debug("String value of number is not real number: "+ex.getMessage());
         }
         return 0;
     }

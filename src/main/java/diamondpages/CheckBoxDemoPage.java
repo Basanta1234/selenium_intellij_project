@@ -17,10 +17,11 @@ public class CheckBoxDemoPage extends DiamondTestBase {
     }
 
     public void clickCheckBox() {
-
+        LOG.info("Clicking on the element");
         checkBox.click();
     }
     public String getConfirmationText(){
+        LOG.info("Retreiving text from the web elemenet");
         return confirmationMessage.getText();
     }
 }
