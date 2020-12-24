@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-12-22T01:28:12Z" name="Suite1" finished-at="2020-12-22T01:28:43Z" duration-ms="30813">
+    <groups>
+    </groups>
+    <test started-at="2020-12-22T01:28:12Z" name="Regression1" finished-at="2020-12-22T01:28:43Z" duration-ms="30813">
+      <class name="com.diamond.testcases.CheckBoxDemo">
+        <test-method is-config="true" signature="initBrowser()[pri:0, instance:com.diamond.testcases.CheckBoxDemo@295eaa7c]" started-at="2020-12-21T19:28:12Z" name="initBrowser" finished-at="2020-12-21T19:28:18Z" duration-ms="6266" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initBrowser -->
+        <test-method signature="runTest1()[pri:0, instance:com.diamond.testcases.CheckBoxDemo@295eaa7c]" started-at="2020-12-21T19:28:18Z" name="runTest1" finished-at="2020-12-21T19:28:42Z" duration-ms="23692" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest1 -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.diamond.testcases.CheckBoxDemo@295eaa7c]" started-at="2020-12-21T19:28:42Z" name="closeBrowser" finished-at="2020-12-21T19:28:43Z" duration-ms="843" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- com.diamond.testcases.CheckBoxDemo -->
+    </test> <!-- Regression1 -->
+  </suite> <!-- Suite1 -->
+</testng-results>
