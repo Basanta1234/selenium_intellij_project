@@ -19,16 +19,17 @@ public class Demo1WebTable extends DiamondTestBase {
         diamondDriver.get("http://demo.guru99.com/test/web-table-element.php#");
         List<WebElement> columnHearder = diamondDriver.findElements(By.cssSelector("table.dataTable>thead>tr>th"));
         List<WebElement> rows = diamondDriver.findElements(By.cssSelector("#leftcontainer>table>tbody>tr"));
-         Map<String, ArrayList<String>> mapData=new HashMap<>();
-         ArrayList<String> column=new ArrayList<>();
+        Map<String, ArrayList<String>> mapData = new HashMap<>();
+        ArrayList<String> column = new ArrayList<>();
         int noOfColumns = columnHearder.size();
         int noOfRows = rows.size();
         for (WebElement row : rows) {
             List<WebElement> cells = row.findElements(By.tagName("td"));
-                for (WebElement cell : cells) {
-                    System.out.print(cell.getText() + "\t");
-                    Thread.sleep(250);
-                }
-                System.out.println("");
+            for (WebElement cell : cells) {
+                System.out.print(cell.getText() + "\t");
+                Thread.sleep(250);
             }
-        }}
+            System.out.println("");
+        }
+    }
+}

@@ -24,23 +24,24 @@ public class ReadTableDataWithColumnName extends DiamondTestBase {
         int totalRows = diamondDriver.findElements(By.cssSelector("#resultTable>tbody>tr")).size();
         System.out.println("Total number of rows : " + totalRows);
 
-       for(int r=1; r<=totalRows; r++){
-          String dataXpath=getTableData(r, "Status");
-          String myData=diamondDriver.findElement(By.xpath(dataXpath)).getText();
-           System.out.println("My Data for Status is : "+myData);
-       }
+        for (int r = 1; r <= totalRows; r++) {
+            String dataXpath = getTableData(r, "Status");
+            String myData = diamondDriver.findElement(By.xpath(dataXpath)).getText();
+            System.out.println("My Data for Status is : " + myData);
+        }
 
     }
-/*
-This method will
-take row number and
-column name as
-parameter and will generate
-dynamic xpath
 
- */
-    private  String  getTableData(int row,String columnName){
+    /*
+    This method will
+    take row number and
+    column name as
+    parameter and will generate
+    dynamic xpath
 
-       return "//table[@id='resultTable']/tbody/tr["+row+"]/td[count(//table[@id='resultTable']/thead/tr/th/a[text()='"+columnName+"']/../preceding-sibling::th[@rowspan='1'])+1]";
+     */
+    private String getTableData(int row, String columnName) {
+
+        return "//table[@id='resultTable']/tbody/tr[" + row + "]/td[count(//table[@id='resultTable']/thead/tr/th/a[text()='" + columnName + "']/../preceding-sibling::th[@rowspan='1'])+1]";
     }
 }

@@ -10,6 +10,11 @@ import org.testng.annotations.Test;
 
 public class DatePickerJS extends DiamondTestBase {
 
+    private static void enterDateUsingJs(WebDriver driver, String dateStr, WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].setAttribute('value', '" + dateStr + "')", element);
+    }
+
     @Test
     public void runTest1() throws InterruptedException {
 
@@ -17,14 +22,9 @@ public class DatePickerJS extends DiamondTestBase {
         WebElement datePicker = diamondDriver.findElement(By.cssSelector("div.input-group.date>input"));
         datePicker.click();
         datePicker.clear();
-        String myDate="27/02/1992";
-        enterDateUsingJs(diamondDriver,myDate,datePicker);
+        String myDate = "27/02/1992";
+        enterDateUsingJs(diamondDriver, myDate, datePicker);
         Thread.sleep(5000);
 
-    }
-
-    private static void enterDateUsingJs(WebDriver driver,String dateStr, WebElement element){
-        JavascriptExecutor js=(JavascriptExecutor) driver;
-        js.executeScript("arguments[0].setAttribute('value', '"+dateStr+"')", element);
     }
 }
