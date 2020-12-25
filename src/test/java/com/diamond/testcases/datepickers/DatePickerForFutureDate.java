@@ -34,7 +34,7 @@ public class DatePickerForFutureDate extends DiamondTestBase {
             }
 
         }
-        diamondDriver.findElement(By.xpath("//*[@id='datepickers-container']/div[1]/div/div/div[2]/div[contains(text(),'"+dateStr+"')]")).click();
+        diamondDriver.findElement(By.xpath("//*[@id='datepickers-container']/div[1]/div/div/div[2]/div[contains(text(),'" + dateStr + "')]")).click();
         Thread.sleep(8000);
     }
 }
