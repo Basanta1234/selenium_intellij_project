@@ -27,7 +27,7 @@ public class Demo1WebTable extends DiamondTestBase {
             List<WebElement> cells = row.findElements(By.tagName("td"));
             for (WebElement cell : cells) {
                 System.out.print(cell.getText() + "\t");
-                Thread.sleep(250);
+
             }
             System.out.println("");
         }

@@ -19,7 +19,6 @@ public class DatePickerForFutureDate extends DiamondTestBase {
         diamondDriver.get("https://www.phptravels.net/home");
         WebElement checkIn = diamondDriver.findElement(By.cssSelector("input#checkin"));
         checkIn.click();
-        Thread.sleep(5000);
         //String textDate=diamondDriver.findElement(By.xpath("//*[@id=\"datepickers-container\"]/div[1]/nav/div[2]")).getText();
 
         while (true) {
@@ -35,6 +34,5 @@ public class DatePickerForFutureDate extends DiamondTestBase {
 
         }
         diamondDriver.findElement(By.xpath("//*[@id='datepickers-container']/div[1]/div/div/div[2]/div[contains(text(),'" + dateStr + "')]")).click();
-        Thread.sleep(8000);
     }
 }
