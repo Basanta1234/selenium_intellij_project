@@ -16,10 +16,10 @@ public class PrintColumnDataWebTable extends DiamondTestBase {
         //Column Name= Group
         //Column Name= Prev Close (Rs)
         diamondDriver.get("http://demo.guru99.com/test/web-table-element.php#");
-        List<String> myData = gtd.getColumnData("Prev Close (Rs)");
+        List<String> myData = gtd.getColumnData("Company");
         for (String d : myData) {
             System.out.println(d);
-            Thread.sleep(1000);
+
         }
     }
 }

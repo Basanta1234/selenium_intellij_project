@@ -24,7 +24,7 @@ public class DatePickerJS extends DiamondTestBase {
         datePicker.clear();
         String myDate = "27/02/1992";
         enterDateUsingJs(diamondDriver, myDate, datePicker);
-        Thread.sleep(5000);
+
 
     }
 }

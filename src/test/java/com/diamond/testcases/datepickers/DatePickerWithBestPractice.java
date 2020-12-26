@@ -78,12 +78,12 @@ public class DatePickerWithBestPractice extends DiamondTestBase {
             for (int j = 0; j > monthDiff; j--) {
                 WebElement prevButton = diamondDriver.findElement(By.cssSelector("a[title='Prev']>span"));
                 prevButton.click();
-                Thread.sleep(1000);
+
 
             }
         }
         diamondDriver.findElement(By.linkText(days)).click();
-        Thread.sleep(1000);
+
     }
 
 }

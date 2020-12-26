@@ -21,7 +21,6 @@ public class CheckBoxDemo extends DiamondTestBase {
 
             if (!diamondDriver.findElement(By.xpath("(//input[@type='checkbox'])[" + i + "]")).isSelected()) {
                 diamondDriver.findElement(By.xpath("(//input[@type='checkbox'])[" + i + "]")).click();
-                Thread.sleep(4000);
             }
         }
 
